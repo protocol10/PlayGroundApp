@@ -5,6 +5,7 @@ import android.content.Context;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.protocol10.playground.R;
+import com.protocol10.playground.RandomUserService;
 
 import javax.inject.Singleton;
 
@@ -47,5 +48,12 @@ public class NetworkModule {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
         return interceptor;
+    }
+
+
+    @Provides
+    @Singleton
+    public RandomUserService providesNetworkService(Retrofit retrofit) {
+        return retrofit.create(RandomUserService.class);
     }
 }
