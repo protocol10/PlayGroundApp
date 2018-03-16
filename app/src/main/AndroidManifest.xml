@@ -3,6 +3,7 @@
     package="com.protocol10.playground">
 
     <application
+        android:name=".PlayApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

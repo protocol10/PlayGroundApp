@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PlayGround</string>
+    <string name="api_random_user">https://randomuser.me/</string>
+
 </resources>
