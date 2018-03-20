@@ -1,6 +1,9 @@
 package com.protocol10.playground.di;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+
+import com.google.gson.Gson;
 
 import javax.inject.Singleton;
 
@@ -11,15 +14,9 @@ import dagger.Provides;
 @Module
 public class AppModule {
 
-    Context context;
-
-    public AppModule(Context context) {
-        this.context = context;
-    }
-
     @Provides
     @Singleton
-    public Context getContext() {
-        return context;
+    public SharedPreferences providesSharedPref(Context context, Gson gson) {
+        return context.getSharedPreferences("ABC", Context.MODE_PRIVATE);
     }
 }

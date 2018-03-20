@@ -14,6 +14,7 @@ class UserListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_list)
         (applicationContext as PlayApp).appComponent.inject(this);
-
+        val presenter =UserListPresenter(networkService);
+        presenter.retrieveListOfUsers()
     }
 }
